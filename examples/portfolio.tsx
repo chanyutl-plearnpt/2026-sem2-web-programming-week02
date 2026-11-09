@@ -20,15 +20,13 @@ export default function App() {
           TODO B2 ขั้น 2: ลบสามบรรทัดนั้น แล้วใช้ projects.map((p) => <Typography key={p.title}>...</Typography>)
           ผลต้องเหมือนขั้น 1 จากนั้นลองเพิ่ม project ที่ 4 ใน data.ts */}
 
-      {/* ===== ฝึกเพิ่ม (คาบคู่ 45–57 นาที) ใช้ข้อมูลจาก data.ts ทำทีละข้อ ไล่จากง่ายไปยาก ===== */}
-
-      {/* ชุด C: ใช้ component จาก Week 1 กับข้อมูลและตัวแปร (import Button, Chip เพิ่มด้านบนเหมือน Week 1)
-          C1: แสดง profile.tagline ด้วย <Typography>
-          C2: ประกาศ const skill = profile.skills[0] เหนือ return แล้วแสดง <Chip label={skill.name} />
-          C3: ใส่ Stack direction="row" spacing={1} ครอบ <Chip> สามใบจาก profile.tools[0], [1], [2]
-              แล้วเพิ่ม <Button variant="contained"> ที่ label เป็น projects[2].title */}
-
-      {/* ชุด D: ใช้ map แปลงสมาชิก array เป็น component (ใส่ key ทุกครั้ง)
+      {/* ===== ฝึกเพิ่ม (คาบคู่ 45–57 นาที) ใช้ข้อมูลจาก data.ts ทำตามสไลด์ week-02-component-practice ทีละข้อ ไล่จากง่ายไปยาก =====
+          ชุด C: ใช้ component จาก Week 1 กับข้อมูลและตัวแปร (import Button, Chip เพิ่มด้านบนเหมือน Week 1)
+          C1: Typography h5 แสดง profile.nickname และ Typography สีเทาแสดง profile.tagline
+          C2: ประกาศ const skill = profile.skills[0] และ const latest = projects[2] เหนือ return
+              แล้วใช้ Stack แถวที่มี <Chip label={skill.name} /> กับ Typography แสดง ชื่อและปีของ latest
+          C3: Stack แถวที่มี Chip สามใบจาก profile.tools[0], [1], [2] และ Button ที่ label เป็น projects[2].title
+          ชุด D: ใช้ map แปลงสมาชิก array เป็น component (ใส่ key ทุกครั้ง)
           D1: แทน Chip สามใบของ C3 ด้วย profile.tools.map((tool) => <Chip key={tool} label={tool} />)
           D2: profile.skills.map แล้วคืน <Chip> ที่ label เป็น `${s.name} ${s.level}%` (template string)
           D3: projects.map คืน Stack ที่มี Typography ชื่อ, Typography คำอธิบาย

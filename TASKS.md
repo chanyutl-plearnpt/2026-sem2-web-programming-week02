@@ -57,7 +57,7 @@
 
 **TODO B2 สองขั้น:** ขั้น 1 เขียน `<Typography>` สามบรรทัดด้วย `projects[0]`, `projects[1]`, `projects[2]` แล้ว Save ขั้น 2 ลบสามบรรทัดนั้นแล้วใช้ `projects.map((p) => ...)` ผลบนหน้าเว็บต้องเหมือนเดิม จากนั้นเพิ่ม project ที่ 4 ใน `data.ts` ดูว่าหน้าเว็บขึ้นเองหรือไม่
 
-**ฝึกเพิ่ม 45–57 นาที (ไม่เก็บคะแนน ทำใน `App.tsx` ตามคอมเมนต์ท้าย stub):** ชุด C ใช้ component จาก Week 1 กับข้อมูลและตัวแปร: C1 `Typography` แสดง `profile.tagline`, C2 ตัวแปร `skill` แล้ว `Chip`, C3 `Stack` แถวที่มี `Chip` สามใบจาก `profile.tools[0..2]` และ `Button` ชุด D ใช้ map ไล่จากง่ายไปยาก: D1 `profile.tools` เป็น `Chip`, D2 `profile.skills` เป็น `Chip` ที่ต่อข้อความด้วย template string, D3 `projects` เป็นกลุ่มชื่อ/คำอธิบาย/แท็ก (map ซ้อน map)
+**ฝึกเพิ่ม 45–57 นาที (ไม่เก็บคะแนน):** เปิดสไลด์ `week-02-component-practice` แล้วทำใน `src/App.tsx` ต่อจาก B2 ชุด C ใช้ component จาก Week 1 กับข้อมูลและตัวแปร (C1 ข้อความ, C2 ตัวแปร, C3 `Chip` กับ `Button`) ชุด D ใช้ map ไล่จากง่ายไปยาก (D1 `profile.tools` เป็น `Chip`, D2 `profile.skills` เป็น `Chip` ที่ต่อข้อความ, D3 `projects` พร้อมแท็กแบบ map ซ้อน map) แต่ละข้อมีหน้าโจทย์ คำใบ้ และเฉลย
 
 **Done check:** หน้าเว็บแสดงชื่อและ project 3 รายการของคุณ และ `npm run check` ผ่าน
 

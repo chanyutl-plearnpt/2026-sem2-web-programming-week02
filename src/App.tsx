@@ -10,6 +10,7 @@ console.log('ปีของผลงานทั้งหมด:', projects.map
 
 export default function App() {
   const skill = profile.skills[0]
+  const latest = projects[2]
 
   return (
     <Stack spacing={1} sx={{ p: 3 }}>
@@ -22,14 +23,22 @@ export default function App() {
         </Typography>
       ))}
 
-      {/* C1: ข้อความจากข้อมูลตรง ๆ */}
-      <Typography>{profile.tagline}</Typography>
+      {/* ชุดฝึก C1: ข้อความจากข้อมูลตรง ๆ */}
+      <Stack spacing={0.5}>
+        <Typography variant="h5">{profile.nickname}</Typography>
+        <Typography color="text.secondary">{profile.tagline}</Typography>
+      </Stack>
 
-      {/* C2: ตัวแปรที่ดึงจาก array แล้วใช้กับ Chip */}
-      <Chip label={skill.name} sx={{ alignSelf: 'flex-start' }} />
+      {/* C2: ตัวแปรที่ดึงจาก array แล้วใช้ใน Chip และ Typography */}
+      <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+        <Chip label={skill.name} />
+        <Typography>
+          {latest.title} ({latest.year})
+        </Typography>
+      </Stack>
 
       {/* C3: เขียนทีละตำแหน่ง (D1 จะแทน Chip สามใบนี้ด้วย map) */}
-      {/* <Stack direction="row" spacing={1}>
+      {/* <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
         <Chip label={profile.tools[0]} />
         <Chip label={profile.tools[1]} />
         <Chip label={profile.tools[2]} />
@@ -51,18 +60,20 @@ export default function App() {
         ))}
       </Stack>
 
-      {/* D3: map ซ้อน map → การ์ดข้อความของแต่ละ project พร้อม Chip แท็ก */}
-      {projects.map((p) => (
-        <Stack key={p.title} spacing={0.5}>
-          <Typography variant="subtitle1">{p.title}</Typography>
-          <Typography color="text.secondary">{p.description}</Typography>
-          <Stack direction="row" spacing={1}>
-            {p.tags.map((tag) => (
-              <Chip key={tag} size="small" label={tag} />
-            ))}
+      {/* D3: map ซ้อน map → ชื่อ คำอธิบาย และ Chip แท็กของแต่ละ project */}
+      <Stack spacing={2}>
+        {projects.map((p) => (
+          <Stack key={p.title} spacing={0.5}>
+            <Typography variant="subtitle1">{p.title}</Typography>
+            <Typography color="text.secondary">{p.description}</Typography>
+            <Stack direction="row" spacing={1}>
+              {p.tags.map((tag) => (
+                <Chip key={tag} size="small" label={tag} />
+              ))}
+            </Stack>
           </Stack>
-        </Stack>
-      ))}
+        ))}
+      </Stack>
     </Stack>
   )
 }
