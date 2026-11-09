@@ -50,12 +50,14 @@
 | 16–26 | แก้ projects ให้ครบ 3 รายการ | 10 |
 | 26–38 | TODO B2: map เป็นรายการบนหน้าเว็บ | 12 |
 | 38–45 | ทดลองชนิดข้อมูลที่ผิดและแก้กลับ | 7 |
-| 45–57 | ห้องทดลอง: ข้อมูลชุดเดียว แสดงหลายแบบ | 12 |
+| 45–57 | ฝึกเพิ่ม: C1–C3 component กับข้อมูล, D1–D3 map เป็น component | 12 |
 | 57–67 | โจทย์ทำเอง หรือช่วยให้ Core ครบ | 10 |
 | 67–77 | check + ตรวจ data.ts + Commit + Push | 10 |
 | 77–80 | Exit ticket และสรุป | 3 |
 
 **TODO B2 สองขั้น:** ขั้น 1 เขียน `<Typography>` สามบรรทัดด้วย `projects[0]`, `projects[1]`, `projects[2]` แล้ว Save ขั้น 2 ลบสามบรรทัดนั้นแล้วใช้ `projects.map((p) => ...)` ผลบนหน้าเว็บต้องเหมือนเดิม จากนั้นเพิ่ม project ที่ 4 ใน `data.ts` ดูว่าหน้าเว็บขึ้นเองหรือไม่
+
+**ฝึกเพิ่ม 45–57 นาที (ไม่เก็บคะแนน ทำใน `App.tsx` ตามคอมเมนต์ท้าย stub):** ชุด C ใช้ component จาก Week 1 กับข้อมูลและตัวแปร: C1 `Typography` แสดง `profile.tagline`, C2 ตัวแปร `skill` แล้ว `Chip`, C3 `Stack` แถวที่มี `Chip` สามใบจาก `profile.tools[0..2]` และ `Button` ชุด D ใช้ map ไล่จากง่ายไปยาก: D1 `profile.tools` เป็น `Chip`, D2 `profile.skills` เป็น `Chip` ที่ต่อข้อความด้วย template string, D3 `projects` เป็นกลุ่มชื่อ/คำอธิบาย/แท็ก (map ซ้อน map)
 
 **Done check:** หน้าเว็บแสดงชื่อและ project 3 รายการของคุณ และ `npm run check` ผ่าน
 
