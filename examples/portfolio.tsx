@@ -1,4 +1,6 @@
 // หน้า 18: คัดลอกทั้งไฟล์นี้ไปแทน src/App.tsx หลังเก็บโค้ดที่ลองไว้ใน practice/App.tsx
+import Stack from '@mui/material/Stack'
+import Typography from '@mui/material/Typography'
 import { profile, projects } from './data'
 
 // ===== คาบเดี่ยว: ทดลองใน Console (เปิดหน้าเว็บ กด F12 แล้วเลือกแท็บ Console) =====
@@ -9,14 +11,14 @@ console.log('ชื่อผลงานทั้งหมด:', projects.map((p
 
 export default function App() {
   return (
-    <div style={{ padding: 24, fontFamily: 'sans-serif' }}>
-      <h1>{profile.name}</h1>
-      <p>{profile.role}</p>
-      <h2>ผลงานของฉัน</h2>
-      <ul>
-        {/* TODO B2: ใช้ projects.map((p) => ...) สร้าง <li> ให้ผลงานทุกชิ้น
-            รูปแบบ: {p.title} ({p.year}) และอย่าลืม key={p.title} */}
-      </ul>
-    </div>
+    <Stack spacing={1} sx={{ p: 3 }}>
+      <Typography variant="h4">{profile.name}</Typography>
+      <Typography color="text.secondary">{profile.role}</Typography>
+      <Typography variant="h6">ผลงานของฉัน</Typography>
+      {/* TODO B2 ขั้น 1: เขียน <Typography> สามบรรทัด ใช้ projects[0], projects[1] และ projects[2]
+          รูปแบบ: {projects[0].title} ({projects[0].year}) แล้ว Save
+          TODO B2 ขั้น 2: ลบสามบรรทัดนั้น แล้วใช้ projects.map((p) => <Typography key={p.title}>...</Typography>)
+          ผลต้องเหมือนขั้น 1 จากนั้นลองเพิ่ม project ที่ 4 ใน data.ts */}
+    </Stack>
   )
 }
